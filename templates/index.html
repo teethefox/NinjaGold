@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <title>Document</title>
+</head>
+<body>
+    <h3>Your gold: {{gold}}</h3>
+    <ul>
+        <li>
+            <h3>Farm</h3>
+            <h3>Earns 10-20 gold</h3>
+            <form id="farm" action="/process" method="post" name="submit" value="farm">
+            <input type="submit" name="farm">
+            </form>
+        </li>
+        <li>
+            <h3>Cave</h3>
+            <h3> Earns 5-10 gold</h3>
+            <form action="/process" method="post" name="submit" value="acave">
+                    <input type="submit" name="acave">
+                    </form>
+        </li>
+        <li>
+            <h3>House</h3>
+            <h3>Earns 1-5 gold</h3>
+            <form action="/process" method="post" name="submit" value="house">
+                    <input type="submit" name="house">
+                    </form>    
+                 </li>
+        <li>
+            <h3>Casino</h3>
+            <h3>Earns/Loses 50 Gold</h3>
+            <form action="/process" method="post" name="submit" value="casino">
+                    <input type="submit" name="casino">
+                    </form>
+                        </li>
+    </ul>
+    <h3>Activities:</h3>
+    <div id="activities">
+        <p>{{str}}</p>
+    </div>
+    <form action='/clear' method='post'>
+    <button>Clear counter</button>
+</form>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("form").submit(function(event){
+        $("#activities").append(<h3>You have earned {{random|safe}} gold</h3>);
+    });
+    });
+
+
+</script>
+</body>
+</html>

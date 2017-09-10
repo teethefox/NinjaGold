@@ -1,0 +1,23 @@
+li{
+    border:2px solid black;
+    display:inline-block;
+    width:21%;
+    height:275px;
+    margin-right:3%;
+}
+#activities{
+    border: 2px solid;
+    height:200px;
+        overflow:scroll;
+    overflow-x:hidden;
+}
+li h3{
+   text-align:center;
+   padding-top:0%;
+   font-size:2rem;
+}
+button{
+    text-align:center;
+    position:relative;
+    left:40%;
+}
